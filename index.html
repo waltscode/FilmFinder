@@ -51,7 +51,7 @@
             </li>
           </ul>
           <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <input id="movie-name" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
         </div>
@@ -103,7 +103,17 @@
 
   </main>
 
- 
+  <!-- The container for displaying movie information -->
+  <section class="container">
+    <section class="card" style="width: 18rem;">
+      <img id="movie-image" src="" class="card-img-top" alt="...">
+      <section class="card-body">
+        <h3 id="movie-title" class="card-title"></h3>
+        <p id="movie-year" class="card-text"></p>
+        <p id="movie-desc" class="card-text"></p>
+      </section>
+    </section>
+  </section>
 
  <!-- Add jQuery CDN -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
