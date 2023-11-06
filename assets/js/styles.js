@@ -29,7 +29,7 @@ btnEl.on('click', function (event) {
   var inputValue = $('#movie-name');
 
   // Construct the API request URL with the user's input
-  var requestUrl = `https://api.themoviedb.org/3/search/movie?api_key=b959be3036efe07cdd94c9fb04a40299&&query=${inputValue.val()}`;
+  var requestUrl = `http://www.omdbapi.com/?t=${inputValue.val()}&plot=full&apikey=trilogy`
 
   // Fetch data from the API using the constructed URL
   var movies = fetch(requestUrl)
@@ -39,11 +39,11 @@ btnEl.on('click', function (event) {
     })
     .then(function (data) {
       // Update the DOM with movie information from the API response
-      console.log(data); // Log the parsed JSON data
-      movieTitleEl.text(data.results[0].title); // Set movie title
-      movieYearEl.text(data.results[0].release_date); // Set movie release date
-      movieDescEl.text(data.results[0].overview); // Set movie description
-      movieImageEl.attr("src", "https://image.tmdb.org/t/p/w154" + data.results[0].poster_path); // Set movie image source
+      console.log(data); // Log the parsed JSON data 
+      movieTitleEl.text(data.Title); // Set movie title
+      movieYearEl.text(data.Released); // Set movie release date
+      movieDescEl.text(data.Plot) // Set movie description
+      movieImageEl.attr('src', data.Poster) // Set movie image source
     })
     .catch(function (err) {
       console.log(err); // Handle any errors that occur during the API request
