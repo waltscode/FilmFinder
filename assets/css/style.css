@@ -47,7 +47,7 @@ div a {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 16px;
+  margin: 0 16px 16px 16px;
 }
 
 /* Style for genre buttons */
@@ -73,6 +73,16 @@ div a {
   justify-content: center;
   flex-wrap: wrap;
   gap: 16px;
+  color: #000000;
+  padding-bottom: 16px;
+}
+
+.movie-search-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  color: #ffffff
 }
 
 /* Style for each movie card */
