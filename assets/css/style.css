@@ -3,7 +3,7 @@ body {
   background-color: #f9fbfd;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.2;
-  background-image: url('../images/cinema.jpg');
+  background-image: url("../images/cinema.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -53,7 +53,7 @@ div a {
 /* Style for genre buttons */
 .genre-btn {
   background-color: #333333;
-  border: 2px solid #0d6efd;;
+  border: 2px solid #0d6efd;
   border-radius: 99px;
   color: #ffffff;
   cursor: pointer;
@@ -78,17 +78,17 @@ div a {
 /* Style for each movie card */
 .movie-card {
   border: 1px solid #ddd;
-  box-shadow:rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
   border-radius: 8px;
   padding: 10px;
   width: 300px;
-  background-color: rgba(255, 255, 255, 0.7)
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .movie-card:hover {
   background-color: rgba(255, 255, 255, 0.9);
   border: 1px solid #0d6efd;
-  box-shadow:rgb(0, 0, 0) 0px 2px 8px 0px;;
+  box-shadow: rgb(0, 0, 0) 0px 2px 8px 0px;
   cursor: pointer;
 }
 

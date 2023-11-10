@@ -9,11 +9,6 @@ body {
   height: 100vh;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-}
-
 div a {
   padding: 16px;
   border-radius: 25px;
