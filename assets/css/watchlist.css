@@ -9,57 +9,16 @@ body {
   height: 100vh;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
 div a {
   padding: 16px;
   border-radius: 25px;
   margin: 15px 0px 0px 8px;
   padding: 25px;
-}
-
-/* Style for the search container */
-.search {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 8px;
-}
-
-/* Style for the search input field */
-.search input {
-  padding: 7px;
-  margin: 5px 0px 5px 5px;
-}
-
-/* Style for the main container holding genre buttons and movie cards */
-.container {
-  display: flex;
-  justify-content: center;
-  color: #ffffff;
-}
-
-/* Style for each genre container */
-.genre-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 16px;
-}
-
-/* Style for genre buttons */
-.genre-btn {
-  background-color: #333333;
-  border: none;
-  border-radius: 99px;
-  color: #ffffff;
-  cursor: pointer;
-  height: 140px;
-  font-size: 26px;
-  margin-left: 5px;
-  width: 140px;
-}
-
-.genre-btn:hover {
-  background-color: #0d6efd;
 }
 
 /* Style for the container holding movie cards */
