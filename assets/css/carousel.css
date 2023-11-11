@@ -1,0 +1,22 @@
+#carouselContainer {
+    margin-top: 60px;
+    width: 600px; /* Set the width to 500px */
+    height: 700px; /* Set the height to 600px */
+    display: block; /* Add this line */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+}
+
+.carousel-container {
+    height: 100%; /* Set the carousel container height to 100% to fill the specified height */
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease; /* For smooth slide transitions */
+}
+
+
+#carouselExampleCaptions .carousel-item img {
+    z-index: 6; /* or a higher value if needed */
+}
