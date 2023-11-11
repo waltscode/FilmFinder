@@ -1,58 +1,37 @@
-var MyNamespace = {
-    init: function () {
-        var requestUrl = 'https://api.themoviedb.org/3/movie/now_playing?api_key=b959be3036efe07cdd94c9fb04a40299';
-        var randomCaraMovieIds = [
-            Math.floor(Math.random() * 19) + 1,
-            Math.floor(Math.random() * 19) + 1,
-            Math.floor(Math.random() * 19) + 1,
-        ];
+$(document).ready(function () {
+    var requestUrl = 'https://api.themoviedb.org/3/movie/now_playing?api_key=b959be3036efe07cdd94c9fb04a40299';
 
-        var caraImageEls = [
-            $(`#movie-carousel-1`),
-            $(`#movie-carousel-2`),
-            $(`#movie-carousel-3`),
-        ];
+    // Use an array to store the IDs of each image in each carousel
+    var caraImageEls = [
+        ['movie-carousel-1-1', 'movie-carousel-1-2', 'movie-carousel-1-3'],
+        ['movie-carousel-2-1', 'movie-carousel-2-2', 'movie-carousel-2-3'],
+        ['movie-carousel-3-1', 'movie-carousel-3-2', 'movie-carousel-3-3'],
+    ];
 
-        // Array to store promises from AJAX requests
-        var ajaxRequests = [];
+    for (let i = 0; i < caraImageEls.length; i++) {
+        $.ajax({
+            url: requestUrl,
+            method: 'GET',
+        }).then(function (response) {
+            console.log(response);
 
-        for (let i = 0; i < caraImageEls.length; i++) {
-            var ajaxRequest = $.ajax({
-                url: requestUrl,
-                method: 'GET',
-            }).then(function (response) {
-                console.log(response);
-                console.log(response.results[0].original_title);
-                console.log(response.results[13].poster_path);
-                console.log(randomCaraMovieIds[i]);
+            // Iterate through the results array to get movie information
+            for (let j = 0; j < caraImageEls[i].length; j++) {
+                var movieIndex = Math.floor(Math.random() * response.results.length);
+                var posterPath = response.results[movieIndex].poster_path;
 
-                var posterPath = response.results[randomCaraMovieIds[i] - 1].poster_path;
                 if (posterPath) {
                     var fullPosterPath = 'https://image.tmdb.org/t/p/original' + posterPath;
-
-                    console.log(fullPosterPath);
                     console.log('Full Poster Path:', fullPosterPath);
-                    console.log('Carousel Element:', caraImageEls[i]);
-                    console.log(caraImageEls[i].length);
+                    console.log('Image Element:', caraImageEls[i][j]);
 
-                    caraImageEls[i].attr('src', fullPosterPath);
-
+                    // Update the source of each image
+                    $('#' + caraImageEls[i][j]).attr('src', fullPosterPath);
                 } else {
-                    console.warn('Poster path is null or undefined for element', caraImageEls[i]);
+                    console.warn('Poster path is null or undefined for element', caraImageEls[i][j]);
                 }
-            });
-
-            // Store the promise in the array
-            ajaxRequests.push(ajaxRequest);
-        }
-
-        // Execute when all promises are resolved
-        $.when.apply($, ajaxRequests).done(function () {
-            console.log("All images loaded successfully!");
-            // Add any code you want to execute after all images are loaded.
+            }
         });
     }
-};
+});
 
-// Call your initialization function
-MyNamespace.init();
