@@ -36,7 +36,11 @@
 #carouselContainer2,
 #carouselContainer3 {
     height: 700px; /* Set a fixed height for all carousel containers */
+  
 }
+
+
+
 
 #carouselExampleCaptions1 .carousel-item img,
 #carouselExampleCaptions2 .carousel-item img,
