@@ -47,8 +47,7 @@ div a {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 16px 16px 16px;
-  margin-top: 25px;
+  padding: 16px;
 }
 
 /* Style for genre buttons */
@@ -61,6 +60,7 @@ div a {
   height: 140px;
   font-size: 26px;
   margin-left: 5px;
+  margin-bottom: 10px;
   width: 140px;
 }
 
@@ -75,7 +75,7 @@ div a {
   flex-wrap: wrap;
   gap: 16px;
   color: #000000;
-  padding-bottom: 16px;
+  padding-top: 16px;
 }
 
 .movie-search-container {
