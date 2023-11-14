@@ -1,0 +1,50 @@
+#carouselContainer {
+    margin-top: 60px;
+    width: 600px; /* Set the width to 500px */
+    height: 700px; /* Set the height to 600px */
+    display: flex; /* Add this line */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+}
+
+.carousel-container {
+    height: 100%; /* Set the carousel container height to 100% to fill the specified height */
+}
+.carousel-container img{
+    height: 100%; /* Set the carousel container height to 100% to fill the specified height */
+   
+}
+
+
+.carousel-inner {
+    display: inline-block;
+    transition: transform 0.5s ease; /* For smooth slide transitions */
+}
+
+
+#carouselExampleCaptions .carousel-item img {
+    z-index: 6; /* or a higher value if needed */
+}
+
+.large-carousel-box {
+    height:700px;
+    width: 100%;
+    display: flex;
+}
+
+#carouselContainer1,
+#carouselContainer2,
+#carouselContainer3 {
+    height: 700px; /* Set a fixed height for all carousel containers */
+  
+}
+
+
+
+
+#carouselExampleCaptions1 .carousel-item img,
+#carouselExampleCaptions2 .carousel-item img,
+#carouselExampleCaptions3 .carousel-item img {
+    height: 100%; /* Set a fixed height for the images within each carousel item */
+    object-fit: cover; /* Maintain image aspect ratio and cover the entire container */
+}
