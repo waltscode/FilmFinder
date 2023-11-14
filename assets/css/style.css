@@ -59,8 +59,7 @@ div a {
   cursor: pointer;
   height: 140px;
   font-size: 26px;
-  margin-left: 5px;
-  margin-bottom: 10px;
+  margin: 5px 5px 5px 0;
   width: 140px;
 }
 
@@ -75,7 +74,7 @@ div a {
   flex-wrap: wrap;
   gap: 16px;
   color: #000000;
-  padding-top: 16px;
+  padding: 16px 0;
 }
 
 .movie-search-container {
