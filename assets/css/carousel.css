@@ -1,33 +1,37 @@
 #carouselContainer {
-    margin-top: 60px;
-    width: 600px; /* Set the width to 500px */
-    height: 700px; /* Set the height to 600px */
-    display: block; /* Add this line */
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
+  margin-top: 60px;
+  width: 600px;
+  /* Set the width to 500px */
+  height: 700px;
+  /* Set the height to 600px */
+  display: block;
+  /* Add this line */
+  align-items: center;
+  /* Center items vertically */
+  justify-content: center;
+  /* Center items horizontally */
 }
 
 .carousel-container1,
 .carousel-container2,
 .carousel-container3 {
-    height: 100%; /* Set the carousel container height to 100% to fill the specified height */
+  height: 100%;
+  /* Set the carousel container height to 100% to fill the specified height */
 }
 
 .carousel-inner {
-    display: flex;
-    transition: transform 0.5s ease; /* For smooth slide transitions */
+  display: flex;
+  transition: transform 0.5s ease;
+  /* For smooth slide transitions */
 }
 
-
-
 .large-carousel-box {
-    max-height:70%;
-   
-    display: flex;
-    margin: 25px;
-    margin-bottom: 25px;
-   
-        max-width: 70%;
-        margin: 0 auto; /* Center the container */
-   
+  max-height: 70%;
+  display: flex;
+  margin: 25px;
+  margin-bottom: 25px;
+  max-width: 70%;
+  margin: 0 auto;
+  /* Center the container */
+
 }
