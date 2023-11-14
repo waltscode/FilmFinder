@@ -9,31 +9,6 @@ body {
   height: 100vh;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-}
-
-div a {
-  padding: 16px;
-  border-radius: 25px;
-  margin-left: 8px;
-  padding: 25px;
-}
-
-/* Style for the search container */
-.search {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 8px;
-}
-
-/* Style for the search input field */
-.search input {
-  padding: 7px;
-  margin: 5px 0px 5px 5px;
-}
 
 /* Style for the main container holding genre buttons and movie cards */
 .container {
