@@ -1,17 +1,28 @@
 // Selecting elements using jQuery
-var btnEl = $(".btn");
-var movieDetailsContainer = $("#movie-details-container");
+var searchBtnEl = $("#search-btn");
+var movieDetailsContainerEl = $("#movie-details-container");
+var movieGenresEl = $(".movie-genres");
+
+// Array of genre buttons with their corresponding IDs and genre IDs
+var genreBtns = [
+  { id: "#action-btn", genreId: 28 },
+  { id: "#adventure-btn", genreId: 12 },
+  { id: "#comedy-btn", genreId: 35 },
+  { id: "#drama-btn", genreId: 18 },
+  { id: "#horror-btn", genreId: 27 },
+  { id: "#romance-btn", genreId: 10749 },
+  { id: "#thriller-btn", genreId: 53 },
+  { id: "#western-btn", genreId: 37 },
+];
 
 // Execute code when the document is fully loaded
 $(document).ready(function() {
-  // Attach a click event handler to the button element
-
-  btnEl.on('click', function(event) {
+  // Attach a click event handler to the search button
+  searchBtnEl.on('click', function(event) {
     event.preventDefault(); // Prevent the default behavior of the button
 
     // Get the user's input for the movie name
     var inputValue = $('#movie-name');
-
     // Construct the API request URL with the user's input
     var requestUrl = `https://api.themoviedb.org/3/search/movie?api_key=b959be3036efe07cdd94c9fb04a40299&query=${inputValue.val()}`;
 
@@ -30,25 +41,21 @@ $(document).ready(function() {
         // Check if there's a movie result
         if (data.results.length > 0) {
           var moviesContainer = $('<div class="movies-container"></div>');
-
           // Loop through the first 12 results or less
           for (var i = 0; i < Math.min(12, data.results.length); i++) {
             createMovieElement(data.results[i], moviesContainer);
           }
-
-          movieDetailsContainer.html(moviesContainer);
+          movieDetailsContainerEl.html(moviesContainer);
           inputValue.val(''); // Clear the input value
-          // popularMoviesContainer.html('');
           movieGenresEl.html('');
         } else {
-          movieDetailsContainer.html('No movies found.');
+          movieDetailsContainerEl.html('No movies found.');
         }
-
       })
       .catch(function(err) {
         console.log(err.message); // Handle any errors, including 404
         if (err.message === 'Movie not found') {
-          movieDetailsContainer.html('Movie not found.');
+          movieDetailsContainerEl.html('Movie not found.');
         } else {
           // Handle other errors
         }
@@ -57,52 +64,28 @@ $(document).ready(function() {
 
   // Function to create and append elements to display movie details
   function createMovieElement(movie, container) {
-    // Create a card-like structure for the movie
-    var movieCard = $('<div class="movie-card"></div>');
-
-    // Create a box to hold the movie poster
-    var posterBox = $('<div class="poster-box"></div>');
-    var image = $("<img>").attr(
-      "src",
-      "https://image.tmdb.org/t/p/w200" + movie.poster_path
-    );
-    posterBox.append(image);
-
-    // Create a box for movie details (title and description)
-    var detailsBox = $('<div class="details-box"></div>');
+    var movieCard = $("<div>").addClass("movie-card");
+    var posterBox = $("<div>").addClass("poster-box");
+    var image = $("<img>").attr("src", "https://image.tmdb.org/t/p/w200" + movie.poster_path);
+    var detailsBox = $('<div>').addClass("details-box");
     var title = $("<h2>").text(movie.title);
     var description = $("<p>").text(movie.overview);
-    detailsBox.append(title);
-    // Create a button to add the movie to the watchlist
-    var addToWatchlistBtn = $(
-      '<button class="add-to-watchlist-btn">Add to Watchlist</button>'
-    );
+    var addToWatchlistBtn = $('<button class="add-to-watchlist-btn">Add to Watchlist</button>');
     addToWatchlistBtn.on("click", function () {
       addToWatchlist(movie);
       this.innerText = "Added to Watchlist";
     });
-
-    // Append the poster box and details box to the movie card
+    // Append elements to the movie card
     movieCard.append(posterBox, detailsBox, addToWatchlistBtn);
-
+    posterBox.append(image);
+    detailsBox.append(title);
     // Append the movie card to the container
     container.append(movieCard);
   }
 
-  var movieGenresEl = $(".movie-genres");
-  var genreBtns = [
-    { id: "#action-btn", genreId: 28 },
-    { id: "#adventure-btn", genreId: 12 },
-    { id: "#comedy-btn", genreId: 35 },
-    { id: "#drama-btn", genreId: 18 },
-    { id: "#horror-btn", genreId: 27 },
-    { id: "#romance-btn", genreId: 10749 },
-    { id: "#thriller-btn", genreId: 53 },
-    { id: "#western-btn", genreId: 37 },
-  ];
-
+  // Function to fetch and display movies based on genre
   function fetchAndDisplayMovies(genre, genreId) {
-    // Define the URL for the API request
+    // URL for the API request
     var apiUrl = `https://api.themoviedb.org/3/discover/movie?api_key=b959be3036efe07cdd94c9fb04a40299&with_genres=${genreId}`;
 
     // Make an API request and handle the response
@@ -119,31 +102,26 @@ $(document).ready(function() {
         console.log(data);
         // Check if there are movie results
         if (data.results.length > 0) {
-          var moviesContainer = $('<div class="movies-container"></div>');
+          var moviesContainer = $('<div>').addClass("movies-container");
 
           // Loop through the array of movie data in the API response
           data.results.forEach(function (movie) {
-            var movieCard = $('<div class="movie-card"></div>');
-            var posterBox = $('<div class="poster-box"></div>');
-            var image = $("<img>").attr(
-              "src",
-              "https://image.tmdb.org/t/p/w200" + movie.poster_path
-            );
-            posterBox.append(image);
-
-            var detailsBox = $('<div class="details-box"></div>');
+            var movieCard = $("<div>").addClass("movie-card");
+            var posterBox = $("<div>").addClass("poster-box");
+            var image = $("<img>").attr("src", "https://image.tmdb.org/t/p/w200" + movie.poster_path);
+            var detailsBox = $('<div>').addClass("details-box");
             var title = $("<h2>").text(movie.title);
             var description = $("<p>").text(movie.overview);
-            detailsBox.append(title);
-            var addToWatchlistBtn = $(
-              '<button class="add-to-watchlist-btn">Add to Watchlist</button>'
-            );
+            var addToWatchlistBtn = $('<button class="add-to-watchlist-btn">Add to Watchlist</button>');
             addToWatchlistBtn.on("click", function () {
               addToWatchlist(movie);
               this.innerText = "Added to Watchlist";
             });
-
+            // Append elements to the movie card
             movieCard.append(posterBox, detailsBox, addToWatchlistBtn);
+            posterBox.append(image);
+            detailsBox.append(title);
+            // Append the movie card to the container
             moviesContainer.append(movieCard);
           });
 
@@ -164,13 +142,7 @@ $(document).ready(function() {
       });
   }
 
-  genreBtns.forEach(function (button) {
-    $(button.id).on("click", function (event) {
-      event.preventDefault();
-      fetchAndDisplayMovies(movieGenresEl, button.genreId);
-    });
-  });
-
+  // Function to add a movie to the watchlist
   function addToWatchlist(movie) {
     // Retrieve the existing watchlist from local storage (if any)
     var watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
@@ -185,13 +157,25 @@ $(document).ready(function() {
       watchlist.push(movie);
       // Update local storage
       localStorage.setItem("watchlist", JSON.stringify(watchlist));
-      // Update the displayed watchlist
-    } else {
-      addToWatchlistBtn.on("click", function () {
-        this.innerText = "Already added to Watchlist";
-      });
     }
   }
+
+  // Attach click event handlers to genre buttons
+  genreBtns.forEach(function (button) {
+    $(button.id).on("click", function (event) {
+      event.preventDefault();
+      fetchAndDisplayMovies(movieGenresEl, button.genreId);
+    });
+  });
+
+  // Attach keyup event listener to the input field
+  $('#movie-name').on('keyup', function(event) {
+    // Check if the pressed key is Enter (key code 13)
+    if (event.keyCode === 13) {
+      // Trigger the click event on the link
+      searchBtnEl.click();
+    }
+  })
 });
 
 /*

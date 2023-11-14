@@ -27,6 +27,7 @@ div a {
   justify-content: center;
   flex-wrap: wrap;
   gap: 16px;
+  padding: 16px 0;
 }
 
 /* Style for each movie card */
@@ -61,16 +62,25 @@ div a {
 /* Style for the box containing movie details (title and description) */
 .details-box {
   padding: 10px;
+  color: #000000;
 }
 
 /* Style for movie title */
-.details-box h2 {
+.details-box h2:first-child {
   font-size: 1.2em;
-  margin-bottom: 10px; /* Add margin between title and description */
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+/* Style for movie release date */
+.details-box h2 {
+  font-size: 1em;
+  margin-bottom: 10px;
+  text-decoration: underline;
 }
 
 /* Style for movie description */
 .details-box p {
   font-size: 1em;
-  color: #000000;
 }

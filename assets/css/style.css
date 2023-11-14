@@ -124,6 +124,7 @@ div a {
 /* Style for movie title */
 .details-box h2 {
   font-size: 1.2em;
+  font-weight: bold;
   margin-bottom: 10px; /* Add margin between title and description */
 }
 
