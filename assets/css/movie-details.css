@@ -38,18 +38,10 @@ nav a {
   border-radius: 8px;
   padding: 10px;
   width: 90vw;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.8);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-}
-
-/* Hover effect for movie cards */
-.movie-card:hover {
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid #0d6efd;
-  box-shadow:rgb(0, 0, 0) 0px 2px 8px 0px;;
-  cursor: pointer;
 }
 
 /* Styling for the poster box containing movie images */
