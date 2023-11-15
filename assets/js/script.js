@@ -3,6 +3,7 @@ var searchBtnEl = $("#search-btn");
 var movieDetailsContainerEl = $("#movie-details-container");
 var movieGenresEl = $(".movie-genres");
 var carouselContainerEl = $(".large-carousel-box")
+var genreBtnsContainerEl = $("#genre-btns-container")
 
 // Array of genre buttons with their corresponding IDs and genre IDs
 var genreBtns = [
@@ -50,6 +51,7 @@ $(document).ready(function() {
           inputValue.val(''); // Clear the input value
           movieGenresEl.html('');
           carouselContainerEl.html('');
+          genreBtnsContainerEl.html('');
         } else {
           movieDetailsContainerEl.html('No movies found.');
         }
@@ -72,6 +74,8 @@ $(document).ready(function() {
     var detailsBox = $('<div>').addClass("details-box");
     var title = $("<h2>").text(movie.title);
     var description = $("<p>").text(movie.overview);
+    var posterLink = $("<a>").attr("href", "movie-details.html?id=" + movie.id);
+
     var addToWatchlistBtn = $('<button class="add-to-watchlist-btn">Add to Watchlist</button>');
     addToWatchlistBtn.on("click", function () {
       addToWatchlist(movie);
@@ -79,7 +83,8 @@ $(document).ready(function() {
     });
     // Append elements to the movie card
     movieCard.append(posterBox, detailsBox, addToWatchlistBtn);
-    posterBox.append(image);
+    posterBox.append(posterLink); 
+    posterLink.append(image);
     detailsBox.append(title);
     // Append the movie card to the container
     container.append(movieCard);
@@ -114,6 +119,8 @@ $(document).ready(function() {
             var detailsBox = $('<div>').addClass("details-box");
             var title = $("<h2>").text(movie.title);
             var description = $("<p>").text(movie.overview);
+            var posterLink = $("<a>").attr("href", "movie-details.html?id=" + movie.id);
+            
             var addToWatchlistBtn = $('<button class="add-to-watchlist-btn">Add to Watchlist</button>');
             addToWatchlistBtn.on("click", function () {
               addToWatchlist(movie);
@@ -121,7 +128,8 @@ $(document).ready(function() {
             });
             // Append elements to the movie card
             movieCard.append(posterBox, detailsBox, addToWatchlistBtn);
-            posterBox.append(image);
+            posterBox.append(posterLink); 
+            posterLink.append(image);
             detailsBox.append(title);
             // Append the movie card to the container
             moviesContainer.append(movieCard);

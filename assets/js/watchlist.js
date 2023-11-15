@@ -24,7 +24,7 @@ $(document).ready(function() {
     // Create a div element with the "poster-box" class
     var posterBox = $("<div>").addClass("poster-box");
     // Create an img element with the poster path obtained from the movie data
-    var image = $("<img>").attr("src", "https://image.tmdb.org/t/p/w200" + movie.poster_path);
+    var image = $("<img>").attr("src", `https://image.tmdb.org/t/p/w200${movie.poster_path}`);
     // Create a div element with the "details-box" class
     var detailsBox = $('<div>').addClass("details-box");
     // Create an h2 element with the movie title
