@@ -90,8 +90,8 @@ div a {
   border: 1px solid #ddd;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
   border-radius: 8px;
-  padding: 10px;
-  width: 300px;
+  padding: 12px 10px 11px 10px;
+  width: 225px;
   background-color: rgba(255, 255, 255, 0.7);
   display: flex;
   flex-direction: column;
@@ -107,6 +107,9 @@ div a {
 /* Style for the box that holds the movie poster */
 .poster-box {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Style for the movie poster image */
@@ -118,14 +121,13 @@ div a {
 
 /* Style for the box containing movie details (title and description) */
 .details-box {
-  padding: 10px;
+  padding: 10px 2px;
 }
 
 /* Style for movie title */
 .details-box h2 {
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: bold;
-  margin-bottom: 10px; /* Add margin between title and description */
 }
 
 /* Style for movie description */
@@ -142,6 +144,9 @@ div a {
   padding: 5px 10px;
   cursor: pointer;
   margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 99%;
 }
 
 .add-to-watchlist-btn:hover {

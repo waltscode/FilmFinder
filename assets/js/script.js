@@ -2,6 +2,7 @@
 var searchBtnEl = $("#search-btn");
 var movieDetailsContainerEl = $("#movie-details-container");
 var movieGenresEl = $(".movie-genres");
+var carouselContainerEl = $(".large-carousel-box")
 
 // Array of genre buttons with their corresponding IDs and genre IDs
 var genreBtns = [
@@ -41,13 +42,14 @@ $(document).ready(function() {
         // Check if there's a movie result
         if (data.results.length > 0) {
           var moviesContainer = $('<div class="movies-container"></div>');
-          // Loop through the first 12 results or less
-          for (var i = 0; i < Math.min(12, data.results.length); i++) {
+          // Loop through the first 20 results or less
+          for (var i = 0; i < Math.min(20, data.results.length); i++) {
             createMovieElement(data.results[i], moviesContainer);
           }
           movieDetailsContainerEl.html(moviesContainer);
           inputValue.val(''); // Clear the input value
           movieGenresEl.html('');
+          carouselContainerEl.html('');
         } else {
           movieDetailsContainerEl.html('No movies found.');
         }
