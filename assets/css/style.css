@@ -155,10 +155,15 @@ nav a {
 
 /* Hover effect for the "Add to Watchlist" button */
 .add-to-watchlist-btn:hover {
-  
+  background-color: #0056b3;
 }
 
-
+/* Styling to change button colour to green when clicked */
 .added-to-watchlist {
-  background-color: #28a745; /* Green background color */
+  background-color: #28a745;
+}
+
+/* Styling to change button colour to green when clicked */
+.added-to-watchlist:hover {
+  background-color: #28a745;
 }
