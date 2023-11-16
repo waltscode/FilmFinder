@@ -53,3 +53,13 @@
 .container-custom:hover {
   transform: scale(1.05);
 }
+
+@media screen and (max-width: 625px) {
+  .large-carousel-box {
+    flex-direction: column;
+  }
+
+  .carousel-inner {
+    margin-bottom: 10px;
+  }
+}

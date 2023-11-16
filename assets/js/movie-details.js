@@ -86,7 +86,7 @@ $(document).ready(function () {
 
   function displayMovieDetails(movie) {
     var detailsContainer = $("#movie-details-container");
-    var requestUrl = `https://api.watchmode.com/v1/title/movie-${movieId}/sources/?apiKey=qfwRjVgtMJ6tlLVvSCzdAHoDCCFkufmuxkiHPLam`;
+    var requestUrl = `https://api.watchmode.com/v1/title/movie-${movieId}/sources/?apiKey=90kXI5nhg4byn08NY5ZZ9UPrFSs53kCXZ7JbLMdO`;
 
     fetch(requestUrl)
       .then(function (response) {
