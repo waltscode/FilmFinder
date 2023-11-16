@@ -125,6 +125,7 @@ $(document).ready(function() {
             addToWatchlistBtn.on("click", function () {
               addToWatchlist(movie);
               this.innerText = "Added to Watchlist";
+              this.classList.add("added-to-watchlist");
             });
             // Append elements to the movie card
             movieCard.append(posterBox, detailsBox, addToWatchlistBtn);
