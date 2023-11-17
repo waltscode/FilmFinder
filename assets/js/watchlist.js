@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
   // Selecting elements using jQuery
   var clearStorageBtnEl = $('#clear-storage-btn');
@@ -8,12 +8,20 @@ $(document).ready(function() {
   function loadWatchlist() {
     // Retrieve the watchlist from local storage or use an empty array if it doesn't exist
     var watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
-    
+
     // Iterate through each movie in the watchlist and create a movie card for it
     $.each(watchlist, function (index, movie) {
       var movieCard = createMovieCard(movie);
       // Append the movie card to the watchlist container
       watchlistContainer.append(movieCard);
+
+      // Add a click event handler to the movie card
+      movieCard.on('click', function () {
+        // Get the movie details page URL
+        var movieDetailsPageUrl = `movie-details.html?id=${movie.id}`;
+        // Navigate to the movie details page
+        window.location.href = movieDetailsPageUrl;
+      });
     });
   }
 
@@ -46,7 +54,7 @@ $(document).ready(function() {
     detailsBox.append(title, description, removeButton);
 
     // Add a click event to the remove button
-    removeButton.on('click', function() {
+    removeButton.on('click', function () {
       // Remove the movie from the watchlist array
       removeFromWatchlist(movie.id);
       // Remove the movie card from the DOM
@@ -63,7 +71,7 @@ $(document).ready(function() {
     var watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
 
     // Find the index of the movie with the specified ID in the watchlist array
-    var index = watchlist.findIndex(function(movie) {
+    var index = watchlist.findIndex(function (movie) {
       return movie.id === movieId;
     });
 
