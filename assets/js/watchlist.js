@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
   // Selecting elements using jQuery
   var clearStorageBtnEl = $('#clear-storage-btn');
@@ -8,12 +8,20 @@ $(document).ready(function() {
   function loadWatchlist() {
     // Retrieve the watchlist from local storage or use an empty array if it doesn't exist
     var watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
-    
+
     // Iterate through each movie in the watchlist and create a movie card for it
     $.each(watchlist, function (index, movie) {
       var movieCard = createMovieCard(movie);
       // Append the movie card to the watchlist container
       watchlistContainer.append(movieCard);
+
+      // Add a click event handler to the movie card
+      movieCard.on('click', function () {
+        // Get the movie details page URL
+        var movieDetailsPageUrl = `movie-details.html?id=${movie.id}`;
+        // Navigate to the movie details page
+        window.location.href = movieDetailsPageUrl;
+      });
     });
   }
 
@@ -30,16 +38,17 @@ $(document).ready(function() {
     // Create an h2 element with the movie title
     var title = $("<h2>").text(movie.title);
     // Create a h2 element with the movie release date
-    var releaseDate = $("<h2>").text("Release Date: " + formatReleaseDate(movie.release_date));
+    var releaseDate = $(`<h2><span class="underline">Release Date:</span> ${formatReleaseDate(movie.release_date)}</h2>`);
     // Create a h2 element with the movie rating
-    var rating = $("<h2>").text("Rating: " + movie.vote_average + "/10");
+    var roundedRating = Math.round(movie.vote_average * 10) / 10;
+    var rating = $(`<h2><span class="underline">Rating:</span> ${roundedRating}/10</h2>`);
     // Create a p element with the movie overview/description
     var description = $("<p>").text(movie.overview);
 
     // Append elements to the movie card
     movieCard.append(posterBox, detailsBox);
     posterBox.append(image);
-    detailsBox.append(title, releaseDate, rating, description);
+    detailsBox.append(title, description);
 
     // Return the created movie card
     return movieCard;

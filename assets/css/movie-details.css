@@ -34,11 +34,11 @@ nav a {
 /* Styling for individual movie cards */
 .movie-card {
   border: 1px solid #ddd;
-  box-shadow:rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
   border-radius: 8px;
   padding: 10px;
   width: 90vw;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.75);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -76,13 +76,39 @@ nav a {
 .details-box h2 {
   font-size: 1em;
   margin-bottom: 10px;
-  text-decoration: underline;
+}
+
+.details-box h2:nth-child(2) {
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.details-box h2:nth-child(5) {
+  margin-bottom: 20px;
 }
 
 /* Styling for movie description */
 .details-box p {
   font-size: 1em;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+.details-box ul {
+  list-style: inside ;
+}
+
+.details-box li a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+.details-box li a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 /* Styling for the "Add to Watchlist" button */
@@ -93,12 +119,49 @@ nav a {
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
-  margin-top: auto;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 30px;
 }
 
 /* Hover effect for the "Add to Watchlist" button */
 .add-to-watchlist-btn:hover {
   background-color: #0056b3;
+}
+
+/* Styling to change button colour to green when clicked */
+.added-to-watchlist {
+  background-color: #28a745;
+}
+
+/* Styling to change button colour to green when clicked */
+.added-to-watchlist:hover {
+  background-color: #28a745;
+}
+
+.streaming-text {
+  margin-right: 5px;
+}
+
+/* Customize the color of Font Awesome icons */
+.fab.fa-windows {
+  color: #0078d4;
+}
+
+.fab.fa-vudu {
+  color: #ff4e00;
+}
+
+.fab.fa-amazon {
+  color: #ff9900;
+}
+
+.fab.fa-youtube {
+  color: #ff0000;
+}
+
+.fab.fa-itunes {
+  color: #a80000;
+}
+
+.fab.fa-unknown {
+  color: #666666;
 }

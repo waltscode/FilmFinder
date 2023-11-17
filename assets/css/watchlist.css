@@ -90,10 +90,13 @@ nav h1 {
 .details-box h2 {
   font-size: 1em;
   margin-bottom: 10px;
-  text-decoration: underline;
 }
 
 /* Styling for movie description */
 .details-box p {
   font-size: 1em;
+}
+
+.underline {
+  text-decoration: underline;
 }

@@ -31,7 +31,6 @@ $(document).ready(function() {
     // Fetch data from the API using the constructed URL
     fetch(requestUrl)
       .then(function(response) {
-        console.log(response);
         if (response.status === 404) {
           // Handle 404 response
           throw new Error('Movie not found');
@@ -70,16 +69,16 @@ $(document).ready(function() {
   function createMovieElement(movie, container) {
     var movieCard = $("<div>").addClass("movie-card");
     var posterBox = $("<div>").addClass("poster-box");
-    var image = $("<img>").attr("src", "https://image.tmdb.org/t/p/w200" + movie.poster_path);
+    var image = $("<img>").attr("src", `https://image.tmdb.org/t/p/w200${movie.poster_path}`);
     var detailsBox = $('<div>').addClass("details-box");
     var title = $("<h2>").text(movie.title);
-    var description = $("<p>").text(movie.overview);
-    var posterLink = $("<a>").attr("href", "movie-details.html?id=" + movie.id);
+    var posterLink = $("<a>").attr("href", `movie-details.html?id=${movie.id}`);
 
     var addToWatchlistBtn = $('<button class="add-to-watchlist-btn">Add to Watchlist</button>');
     addToWatchlistBtn.on("click", function () {
       addToWatchlist(movie);
       this.innerText = "Added to Watchlist";
+      this.classList.add("added-to-watchlist");
     });
     // Append elements to the movie card
     movieCard.append(posterBox, detailsBox, addToWatchlistBtn);
@@ -98,7 +97,6 @@ $(document).ready(function() {
     // Make an API request and handle the response
     fetch(apiUrl)
       .then(function (response) {
-        console.log(response);
         if (response.status === 404) {
           // Handle 404 response
           throw new Error("Movies not found");
@@ -115,11 +113,11 @@ $(document).ready(function() {
           data.results.forEach(function (movie) {
             var movieCard = $("<div>").addClass("movie-card");
             var posterBox = $("<div>").addClass("poster-box");
-            var image = $("<img>").attr("src", "https://image.tmdb.org/t/p/w200" + movie.poster_path);
+            var image = $("<img>").attr("src", `https://image.tmdb.org/t/p/w200${movie.poster_path}`);
             var detailsBox = $('<div>').addClass("details-box");
             var title = $("<h2>").text(movie.title);
             var description = $("<p>").text(movie.overview);
-            var posterLink = $("<a>").attr("href", "movie-details.html?id=" + movie.id);
+            var posterLink = $("<a>").attr("href", `movie-details.html?id=${movie.id}`);
             
             var addToWatchlistBtn = $('<button class="add-to-watchlist-btn">Add to Watchlist</button>');
             addToWatchlistBtn.on("click", function () {
@@ -188,40 +186,3 @@ $(document).ready(function() {
     }
   })
 });
-
-/*
-  //----- Function for displaying popular movies -----//
-  var popularMoviesContainer = $('#popular-movies-container .popular-movies');
-
-  function fetchAndDisplayPopularMovies() {
-    var popularMoviesUrl = `https://api.themoviedb.org/3/movie/popular?api_key=b959be3036efe07cdd94c9fb04a40299`;
-
-    fetch(popularMoviesUrl)
-      .then(function (response) {
-        if (response.status === 404) {
-          throw new Error('Popular movies not found');
-        }
-        return response.json();
-      })
-      .then(function (data) {
-        if (data.results.length > 0) {
-          var moviesContainer = $('<div class="movies-container"></div>');
-          for (var i = 0; i < Math.min(4, data.results.length); i++) {
-            createMovieElement(data.results[i], moviesContainer);
-          }
-          popularMoviesContainer.html(moviesContainer);
-        } else {
-          popularMoviesContainer.html('No popular movies found.');
-        }
-      })
-      .catch(function (err) {
-        console.log(err.message);
-        if (err.message === 'Popular movies not found') {
-          popularMoviesContainer.html('No popular movies found.');
-        } else {
-          // Handle other errors
-        }
-      });
-  }
-  fetchAndDisplayPopularMovies();
-  */
