@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
   // Selecting elements using jQuery
   var clearStorageBtnEl = $('#clear-storage-btn');
@@ -8,24 +8,16 @@ $(document).ready(function () {
   function loadWatchlist() {
     // Retrieve the watchlist from local storage or use an empty array if it doesn't exist
     var watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
-
+    
     // Iterate through each movie in the watchlist and create a movie card for it
     $.each(watchlist, function (index, movie) {
       var movieCard = createMovieCard(movie);
       // Append the movie card to the watchlist container
       watchlistContainer.append(movieCard);
-
-      // Add a click event handler to the movie card
-      movieCard.on('click', function () {
-        // Get the movie details page URL
-        var movieDetailsPageUrl = `movie-details.html?id=${movie.id}`;
-        // Navigate to the movie details page
-        window.location.href = movieDetailsPageUrl;
-      });
     });
   }
 
-  // Function to create a movie card for the watchlist
+  // Function to create a movie card for the watchlist with a remove button
   function createMovieCard(movie) {
     // Create a div element with the "movie-card" class
     var movieCard = $("<div>").addClass("movie-card");
@@ -38,20 +30,48 @@ $(document).ready(function () {
     // Create an h2 element with the movie title
     var title = $("<h2>").text(movie.title);
     // Create a h2 element with the movie release date
-    var releaseDate = $(`<h2><span class="underline">Release Date:</span> ${formatReleaseDate(movie.release_date)}</h2>`);
+    var releaseDate = $("<h2>").text("Release Date: " + formatReleaseDate(movie.release_date));
     // Create a h2 element with the movie rating
-    var roundedRating = Math.round(movie.vote_average * 10) / 10;
-    var rating = $(`<h2><span class="underline">Rating:</span> ${roundedRating}/10</h2>`);
+    var rating = $("<h2>").text("Rating: " + movie.vote_average + "/10");
     // Create a p element with the movie overview/description
     var description = $("<p>").text(movie.overview);
+
+    // Create a button for removing the movie from the watchlist
+    var removeButton = $("<button>").text("Remove from Watchlist").addClass("remove-btn");
 
     // Append elements to the movie card
     movieCard.append(posterBox, detailsBox);
     posterBox.append(image);
-    detailsBox.append(title, description);
+    detailsBox.append(title, releaseDate, rating, description, removeButton);
+
+    // Add a click event to the remove button
+    removeButton.on('click', function() {
+      // Remove the movie from the watchlist array
+      removeFromWatchlist(movie.id);
+      // Remove the movie card from the DOM
+      movieCard.remove();
+    });
 
     // Return the created movie card
     return movieCard;
+  }
+
+  // Function to remove a movie from the watchlist
+  function removeFromWatchlist(movieId) {
+    // Retrieve the watchlist from local storage
+    var watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
+
+    // Find the index of the movie with the specified ID in the watchlist array
+    var index = watchlist.findIndex(function(movie) {
+      return movie.id === movieId;
+    });
+
+    // If the movie is found, remove it from the watchlist array
+    if (index !== -1) {
+      watchlist.splice(index, 1);
+      // Update the local storage with the modified watchlist
+      localStorage.setItem("watchlist", JSON.stringify(watchlist));
+    }
   }
 
   // Function to format the release date
