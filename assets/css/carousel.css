@@ -1,7 +1,7 @@
 #carouselContainer {
   margin-top: 60px;
   width: 600px;
-  height: 700px;
+  height: 675px;
   display: block;
   align-items: center;
   justify-content: center;
@@ -11,6 +11,7 @@
 .carousel-container2,
 .carousel-container3 {
   height: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .carousel-inner {
@@ -47,6 +48,7 @@
 
 .container-custom {
   transition: transform 0.3s ease;
+
 }
 
 .container-custom:hover {

@@ -21,10 +21,11 @@ body {
 nav {
   display: flex;
   justify-content: space-between;
+
 }
 
 nav a {
-  padding: 16px;
+  padding: 10px;
   border-radius: 25px;
   margin-left: 8px;
   padding: 25px;
@@ -174,4 +175,25 @@ nav a {
 /* Styling to change button colour to green when clicked */
 .added-to-watchlist:hover {
   background-color: #28a745;
+}
+
+.glow-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px; 
+  width: auto; 
+  margin: 0 auto; /* Center the container horizontally */
+  
+
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.533)) 
+          drop-shadow(0 0 3px rgba(255, 255, 255, 0.8))
+          drop-shadow(0 0 2px rgba(255, 255, 255, 0.8));   
+}
+img.glow-logo {
+  margin-top: -16px;
+}
+
+main {
+  height: 100vh;
 }
