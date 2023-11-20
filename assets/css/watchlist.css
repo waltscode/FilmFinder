@@ -83,3 +83,17 @@ body {
 .underline {
   text-decoration: underline;
 }
+
+.remove-btn {
+  background-color: #FF0000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+/* Hover effect for the “Remove from Watchlist” button */
+.remove-btn:hover {
+  background-color: #B30000;
+}

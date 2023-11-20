@@ -60,7 +60,7 @@ $(document).ready(function () {
       streamingList.append(noStreamingProvidersMessage);
     }
 
-    var addToWatchlistBtn = $('<button class="add-to-watchlist-btn">Add to Watchlist</button>');
+    var addToWatchlistBtn = $('<button class="add-to-watchlist2-btn">Add to Watchlist</button>');
     addToWatchlistBtn.on("click", function () {
       addToWatchlist(movie);
       this.innerText = "Added to Watchlist";
