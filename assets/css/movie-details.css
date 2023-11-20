@@ -9,21 +9,8 @@ body {
   height: 100vh;
 }
 
-/* Navigation styling */
-nav {
-  display: flex;
-  justify-content: space-between;
-}
-
-nav a {
-  padding: 16px;
-  border-radius: 25px;
-  margin: 15px 0px 0px 8px;
-  padding: 25px;
-}
-
 /* Container for displaying movies */
-.movies-container {
+.movies-container2 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -32,7 +19,7 @@ nav a {
 }
 
 /* Styling for individual movie cards */
-.movie-card {
+.movie-card2 {
   border: 1px solid #ddd;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
   border-radius: 8px;
@@ -45,27 +32,27 @@ nav a {
 }
 
 /* Styling for the poster box containing movie images */
-.poster-box {
+.poster-box2 {
   display: flex;
   align-items: center;
 }
 
 /* Styling for movie poster images */
-.poster-box img {
+.poster-box2 img {
   max-width: 100%;
   max-height: 500px;
   border-radius: 5px;
 }
 
 /* Styling for the details box containing movie title and description */
-.details-box {
+.details-box2 {
   padding: 10px;
   color: #000000;
   flex: 1;
 }
 
 /* Styling for movie title */
-.details-box h2:first-child {
+.details-box2 h2:first-child {
   font-size: 1.2em;
   font-weight: bold;
   margin-bottom: 10px;
@@ -73,36 +60,36 @@ nav a {
 }
 
 /* Styling for movie release date and rating */
-.details-box h2 {
+.details-box2 h2 {
   font-size: 1em;
   margin-bottom: 10px;
 }
 
-.details-box h2:nth-child(2) {
+.details-box2 h2:nth-child(2) {
   margin-bottom: 20px;
   font-style: italic;
 }
 
-.details-box h2:nth-child(5) {
+.details-box2 h2:nth-child(5) {
   margin-bottom: 20px;
 }
 
 /* Styling for movie description */
-.details-box p {
+.details-box2 p {
   font-size: 1em;
   margin-bottom: 30px;
 }
 
-.details-box ul {
+.details-box2 ul {
   list-style: inside ;
 }
 
-.details-box li a {
+.details-box2 li a {
   color: #0d6efd;
   text-decoration: none;
 }
 
-.details-box li a:hover {
+.details-box2 li a:hover {
   color: #0056b3;
   text-decoration: underline;
 }
@@ -112,7 +99,7 @@ nav a {
 }
 
 /* Styling for the "Add to Watchlist" button */
-.add-to-watchlist-btn {
+.add-to-watchlist2-btn {
   background-color: #007bff;
   color: #fff;
   border: none;
@@ -123,17 +110,17 @@ nav a {
 }
 
 /* Hover effect for the "Add to Watchlist" button */
-.add-to-watchlist-btn:hover {
+.add-to-watchlist2-btn:hover {
   background-color: #0056b3;
 }
 
 /* Styling to change button colour to green when clicked */
-.added-to-watchlist {
+.added-to-watchlist2 {
   background-color: #28a745;
 }
 
 /* Styling to change button colour to green when clicked */
-.added-to-watchlist:hover {
+.added-to-watchlist2:hover {
   background-color: #28a745;
 }
 

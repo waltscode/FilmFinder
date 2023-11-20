@@ -33,9 +33,9 @@ $(document).ready(function () {
     var description = $("<p>").text(movie.overview);
     var streamingTitle = $("<h2>").html('<span class="underline">Watch Now:</span>');
     var streamingList = $('<ul>');
-    var movieCard = $("<div>").addClass("movie-card");
-    var posterBox = $("<div>").addClass("poster-box");
-    var detailsBox = $('<div>').addClass("details-box");
+    var movieCard2 = $("<div>").addClass("movie-card2");
+    var posterBox2 = $("<div>").addClass("poster-box2");
+    var detailsBox2 = $('<div>').addClass("details-box2");
 
     if (streamingSources && streamingSources.length > 0) {
       var uniqueSourceNames = [];
@@ -67,9 +67,9 @@ $(document).ready(function () {
       this.classList.add("added-to-watchlist");
     });
 
-    movieCard.append(posterBox, detailsBox);
-    posterBox.append(image);
-    detailsBox.append(
+    movieCard2.append(posterBox2, detailsBox2);
+    posterBox2.append(image);
+    detailsBox2.append(
       title,
       tagline,
       rating,
@@ -81,7 +81,7 @@ $(document).ready(function () {
       addToWatchlistBtn,
     );
 
-    return movieCard;
+    return movieCard2;
   }
 
   function displayMovieDetails(movie) {
