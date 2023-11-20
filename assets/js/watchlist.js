@@ -11,12 +11,12 @@ $(document).ready(function () {
 
     // Iterate through each movie in the watchlist and create a movie card for it
     $.each(watchlist, function (index, movie) {
-      var movieCard = createMovieCard(movie);
+      var movieCard2 = createMovieCard2(movie);
       // Append the movie card to the watchlist container
-      watchlistContainer.append(movieCard);
+      watchlistContainer.append(movieCard2);
 
       // Add a click event handler to the movie card
-      movieCard.on('click', function () {
+      movieCard2.on('click', function () {
         // Get the movie details page URL
         var movieDetailsPageUrl = `movie-details.html?id=${movie.id}`;
         // Navigate to the movie details page
@@ -26,15 +26,15 @@ $(document).ready(function () {
   }
 
   // Function to create a movie card for the watchlist
-  function createMovieCard(movie) {
+  function createMovieCard2(movie) {
     // Create a div element with the "movie-card" class
-    var movieCard = $("<div>").addClass("movie-card");
+    var movieCard2 = $("<div>").addClass("movie-card2");
     // Create a div element with the "poster-box" class
-    var posterBox = $("<div>").addClass("poster-box");
+    var posterBox2 = $("<div>").addClass("poster-box2");
     // Create an img element with the poster path obtained from the movie data
     var image = $("<img>").attr("src", `https://image.tmdb.org/t/p/w200${movie.poster_path}`);
     // Create a div element with the "details-box" class
-    var detailsBox = $('<div>').addClass("details-box");
+    var detailsBox2 = $('<div>').addClass("details-box2");
     // Create an h2 element with the movie title
     var title = $("<h2>").text(movie.title);
     // Create a h2 element with the movie release date
@@ -49,20 +49,20 @@ $(document).ready(function () {
     var removeButton = $("<button>").text("Remove from Watchlist").addClass("remove-btn");
 
     // Append elements to the movie card
-    movieCard.append(posterBox, detailsBox);
-    posterBox.append(image);
-    detailsBox.append(title, description, removeButton);
+    movieCard2.append(posterBox2, detailsBox2);
+    posterBox2.append(image);
+    detailsBox2.append(title, description, removeButton);
 
     // Add a click event to the remove button
     removeButton.on('click', function () {
       // Remove the movie from the watchlist array
       removeFromWatchlist(movie.id);
       // Remove the movie card from the DOM
-      movieCard.remove();
+      movieCard2.remove();
     });
 
     // Return the created movie card
-    return movieCard;
+    return movieCard2;
   }
 
   // Function to remove a movie from the watchlist
