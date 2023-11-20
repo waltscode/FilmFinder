@@ -1,16 +1,17 @@
 # FilmFinder
 
-## Description
-```
-Welcome to FilmFinder!
+### Welcome to FilmFinder!
 
-FilmFinder is a movie database web application that allows users to search for movies, view details about them, maintain a personalized watchlist, and discover the streaming platforms for each movie.
+- <strong>FilmFinder is a movie database web application that allows users to search for movies, view details about them, maintain a personalized watchlist, and discover the streaming platforms for each movie. The website features a clean and responsive UI for the user.</strong>
 
-The website features a clean and responsive UI for the user. The website draws your attentions upon loading with unique branding and engaging carousels of movie posters. It was our vision to simulate browsing your local movie theatre when deciding what movie to watch. The user can then click any genre they are interested in and easily add movies to their watchlist. Upon adding to the watchlist, user can see information about the movie's plot and where they can stream it. It is our intention so that when the user has completed watching a movie, they can revisit their watchlist and remove items individually. All watchlist items are stored locally to provide a seamless experience for the end user. 
+-  The website draws your attentions upon loading with unique branding and engaging carousels of movie posters. It was our vision to simulate browsing your local movie theatre when deciding what movie to watch. 
 
-Tired of watching "The Office" for the 100th time? Try out FilmFinder and see what else is out there!
+- The user can then click any genre they are interested in and easily add movies to their watchlist. Upon adding to the watchlist, user can see information about the movie's plot and where they can stream it. 
 
-```
+- It is our intention so that when the user has completed watching a movie, they can revisit their watchlist and remove items individually. All watchlist items are stored locally to provide a seamless experience for the end user. 
+
+- <strong>Tired of watching "The Office" for the 100th time? Try out FilmFinder and see what else is out there!</strong>
+
 ### Movie Search:
 - <strong>Functionality:</strong> Users can enter the name of a movie in the search bar and click the "Search" button.
 - <strong>API Integration:</strong> The application interacts with The Movie Database (TMDb) API to fetch information about movies based on the user's input.
@@ -40,6 +41,11 @@ Tired of watching "The Office" for the 100th time? Try out FilmFinder and see wh
 - [TMDb API](https://developer.themoviedb.org/reference/intro/getting-started)
 - [WatchMode API](https://api.watchmode.com/docs/#api-reference)
 - [Font Awesome](https://fontawesome.com/icons)
+
+# Link to the deployed URL below:
+
+https://waltscode.github.io/FilmFinder/ 
+
 
 # Screenshot of the website can be found below:
 
