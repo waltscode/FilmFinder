@@ -1,10 +1,21 @@
+$(document).on("click", function(event) {
+    if (!$(event.target).closest('#myDropdown, #dropdown-menu').length) {
+        $("#myDropdown").hide();
+    }
+});
+
+$("#dropdown-menu").on("click", function(event) {
+    event.stopPropagation();
+    menuFunction();
+});
+
 function menuFunction() {
-    var click = document.getElementById("myDropdown")
-    if (click.style.display === "none") {
-        click.style.display = "flex";
+    var dropdown = $("#myDropdown");
+    var displayStyle = dropdown.css("display");
+
+    if (displayStyle === "none") {
+        dropdown.css("display", "flex");
     } else {
-        click.style.display = "none";
+        dropdown.css("display", "none");
     }
 }
-
-
