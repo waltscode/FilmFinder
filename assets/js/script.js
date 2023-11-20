@@ -180,7 +180,7 @@ $(document).ready(function() {
       // Scroll to the target genre content section
       $('html, body').animate({
         scrollTop: $(movieGenresEl).offset().top
-      }, 10); // Adjust the duration as needed
+      }, 10); 
     });
   });
 
