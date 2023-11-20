@@ -2,21 +2,18 @@
 *:before,
 *:after {
   box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.2;
 }
 
 body {
-  background-image: url("../images/cinema.jpg");
-  font-size: 12px;
-  
+  background-image: url("../images/a-drive-in-movie-theatre-at-sunset-W3R44EC-2048x1152.jpg");
+  font-size: 16px;  
 }
 
 .background {
   display: flex;
-  min-height: 100vh;
+  min-height: 50vh;
 }
 
 .container {

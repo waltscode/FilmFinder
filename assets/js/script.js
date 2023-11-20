@@ -173,7 +173,14 @@ $(document).ready(function() {
   genreBtns.forEach(function (button) {
     $(button.id).on("click", function (event) {
       event.preventDefault();
+
+      // Fetch and display movies for the clicked genre
       fetchAndDisplayMovies(movieGenresEl, button.genreId);
+
+      // Scroll to the target genre content section
+      $('html, body').animate({
+        scrollTop: $(movieGenresEl).offset().top
+      }, 10); 
     });
   });
 
