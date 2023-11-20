@@ -21,10 +21,11 @@ body {
 nav {
   display: flex;
   justify-content: space-between;
+padding-bottom: 20px;
 }
 
 nav a {
-  padding: 16px;
+  padding: 10px;
   border-radius: 25px;
   margin-left: 8px;
   padding: 25px;
@@ -175,3 +176,21 @@ nav a {
 .added-to-watchlist:hover {
   background-color: #28a745;
 }
+
+.glow-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px; 
+  width: auto; 
+  margin: 0 auto; /* Center the container horizontally */
+  
+
+  /* filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.533)) 
+          drop-shadow(0 0 1px rgba(255, 255, 255, 0.8))
+          drop-shadow(0 0 1px rgba(255, 255, 255, 0.8));    */
+}
+img.glow-logo {
+  margin-top: -16px;
+}
+
