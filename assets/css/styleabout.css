@@ -9,7 +9,7 @@ body {
   background-color: #f9fbfd;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.2;
-  background-image: url("../images/cinema.jpg");
+  background-image: url("../images/movie-theater-popcorn.webp");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -19,7 +19,8 @@ body {
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  color: white;
+  color: #2D23A6;
   padding-left: 300px;
   padding-right: 350px;
+  
 }
