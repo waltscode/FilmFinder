@@ -21,7 +21,7 @@ body {
 nav {
   display: flex;
   justify-content: space-between;
-
+padding-bottom: 20px;
 }
 
 nav a {
@@ -194,6 +194,3 @@ img.glow-logo {
   margin-top: -16px;
 }
 
-main {
-  height: 100vh;
-}
