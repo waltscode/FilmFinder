@@ -1,0 +1,154 @@
+/* General styling for the entire page */
+body {
+  background-color: #f9fbfd;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.2;
+  background-image: url('../images/cinema.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+/* Container for displaying movies */
+.movies-container2 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+/* Styling for individual movie cards */
+.movie-card2 {
+  border: 1px solid #ddd;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+  border-radius: 8px;
+  padding: 10px;
+  width: 90vw;
+  background-color: rgba(255, 255, 255, 0.75);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* Styling for the poster box containing movie images */
+.poster-box2 {
+  display: flex;
+  align-items: center;
+}
+
+/* Styling for movie poster images */
+.poster-box2 img {
+  max-width: 100%;
+  max-height: 500px;
+  border-radius: 5px;
+}
+
+/* Styling for the details box containing movie title and description */
+.details-box2 {
+  padding: 10px;
+  color: #000000;
+  flex: 1;
+}
+
+/* Styling for movie title */
+.details-box2 h2:first-child {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+/* Styling for movie release date and rating */
+.details-box2 h2 {
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.details-box2 h2:nth-child(2) {
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.details-box2 h2:nth-child(5) {
+  margin-bottom: 20px;
+}
+
+/* Styling for movie description */
+.details-box2 p {
+  font-size: 1em;
+  margin-bottom: 30px;
+}
+
+.details-box2 ul {
+  list-style: inside ;
+}
+
+.details-box2 li a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+.details-box2 li a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+/* Styling for the "Add to Watchlist" button */
+.add-to-watchlist2-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+/* Hover effect for the "Add to Watchlist" button */
+.add-to-watchlist2-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Styling to change button colour to green when clicked */
+.added-to-watchlist2 {
+  background-color: #28a745;
+}
+
+/* Styling to change button colour to green when clicked */
+.added-to-watchlist2:hover {
+  background-color: #28a745;
+}
+
+.streaming-text {
+  margin-right: 5px;
+}
+
+/* Customize the color of Font Awesome icons */
+.fab.fa-windows {
+  color: #0078d4;
+}
+
+.fab.fa-vudu {
+  color: #ff4e00;
+}
+
+.fab.fa-amazon {
+  color: #ff9900;
+}
+
+.fab.fa-youtube {
+  color: #ff0000;
+}
+
+.fab.fa-itunes {
+  color: #a80000;
+}
+
+.fab.fa-unknown {
+  color: #666666;
+}

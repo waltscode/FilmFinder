@@ -1,0 +1,168 @@
+/* General styling for the entire page */
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: white;
+  font-size: 45px;
+}
+
+body {
+  background-color: #f9fbfd;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.2;
+  background-image: url("../images/cinema.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+/* Container styling */
+.container {
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+}
+
+/* Genre button container styling */
+.genre-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+/* Styling for individual genre buttons */
+.genre-btn {
+  background-color: #333333;
+  border: 2px solid #0d6efd;
+  border-radius: 99px;
+  color: #ffffff;
+  cursor: pointer;
+  height: 140px;
+  font-size: 26px;
+  margin: 5px 5px 5px 0;
+  width: 140px;
+}
+
+/* Hover effect for genre buttons */
+.genre-btn:hover {
+  background-color: #0d6efd;
+}
+
+/* Container for displaying movies */
+.movies-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  color: #000000;
+  padding: 16px 0;
+}
+
+/* Container for displaying movie search results */
+.movie-search-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  color: #ffffff;
+}
+
+/* Styling for individual movie cards */
+.movie-card {
+  border: 1px solid #ddd;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+  border-radius: 8px;
+  padding: 12px 10px 11px 10px;
+  width: 225px;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hover effect for movie cards */
+.movie-card:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #0d6efd;
+  box-shadow: rgb(0, 0, 0) 0px 2px 8px 0px;
+}
+
+/* Styling for the poster box containing movie images */
+.poster-box {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styling for movie poster images */
+.poster-box img {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Styling for the details box containing movie title and description */
+.details-box {
+  padding: 10px 2px;
+}
+
+/* Styling for movie title */
+.details-box h2 {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+/* Styling for movie description */
+.details-box p {
+  font-size: 1em;
+  color: #000000;
+}
+
+/* Styling for the "Add to Watchlist" button */
+.add-to-watchlist-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 99%;
+}
+
+/* Hover effect for the "Add to Watchlist" button */
+.add-to-watchlist-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Styling to change button colour to green when clicked */
+.added-to-watchlist {
+  background-color: #28a745;
+}
+
+/* Styling to change button colour to green when clicked */
+.added-to-watchlist:hover {
+  background-color: #28a745;
+}
+
+.glow-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px; 
+  width: auto; 
+  margin: 0 auto; /* Center the container horizontally */
+  
+
+  /* filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.533)) 
+          drop-shadow(0 0 1px rgba(255, 255, 255, 0.8))
+          drop-shadow(0 0 1px rgba(255, 255, 255, 0.8));    */
+}
+img.glow-logo {
+  margin-top: -16px;
+}

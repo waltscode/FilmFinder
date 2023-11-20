@@ -1,0 +1,25 @@
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #007bff;
+  font-size: 50px;
+}
+
+body {
+  background-color: #f9fbfd;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.2;
+  background-image: url("../images/cinema.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+#about {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: white;
+  padding-left: 300px;
+  padding-right: 350px;
+}
