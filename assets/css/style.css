@@ -181,14 +181,14 @@ nav a {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80px; 
+  height: 100px; 
   width: auto; 
   margin: 0 auto; /* Center the container horizontally */
   
 
-  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.533)) 
-          drop-shadow(0 0 3px rgba(255, 255, 255, 0.8))
-          drop-shadow(0 0 2px rgba(255, 255, 255, 0.8));   
+  /* filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.533)) 
+          drop-shadow(0 0 1px rgba(255, 255, 255, 0.8))
+          drop-shadow(0 0 1px rgba(255, 255, 255, 0.8));    */
 }
 img.glow-logo {
   margin-top: -16px;
