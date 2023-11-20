@@ -7,17 +7,18 @@
 }
 
 body {
-  background-image: url("../images/cinema.jpg");
+  background-image: url("../images/a-drive-in-movie-theatre-at-sunset-W3R44EC-2048x1152.jpg");
   font-size: 16px;  
 }
 
 .background {
   display: flex;
-  min-height: 100vh;
+  min-height: 50vh;
 }
 
 .container {
   flex: 0 1 700px;
+  margin: auto;
   padding: 10px;
 }
 
